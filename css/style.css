@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 		:root {
 			--wp--preset--aspect-ratio--square: 1;
 			--wp--preset--aspect-ratio--4-3: 4/3;
@@ -458,3 +451,76 @@
 
 
 		/*  */
+
+		
+
+/* CSS untuk galeri video di desktop */
+.elementor-con-inner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kolom pada desktop */
+  grid-template-rows: repeat(2, auto); /* 2 baris pada desktop */
+  gap: 15px; /* Menambahkan jarak antar video */
+}
+
+.elementor-widget-video {
+  position: relative;
+  width: 100%; /* Memastikan video mengisi lebar grid */
+  height: auto; /* Menjaga rasio video */
+}
+
+/* CSS untuk video pada perangkat mobile */
+@media (max-width: 768px) {
+  .elementor-con-inner {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+    grid-template-rows: repeat(5, auto); /* 5 baris pada layar kecil */
+  }
+}
+
+/* Penyesuaian untuk overlay gambar pada video */
+.elementor-custom-embed-image-overlay {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Efek hover untuk ikon play */
+.elementor-custom-embed-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* CSS untuk galeri di desktop */
+.elementor-image-gallery {
+  /* display: grid; */
+  grid-template-columns: repeat(5, 1fr); /* 5 kolom pada desktop */
+  grid-template-rows: repeat(2, auto); /* 2 baris pada desktop */
+  gap: 15px; /* Menambahkan jarak antar gambar */
+}
+
+.elementor-image-gallery img {
+  width: 100%; /* Gambar mengisi lebar grid */
+  height: auto; /* Menjaga rasio aspek gambar */
+  object-fit: cover; /* Memastikan gambar mengisi area kolom dengan baik */
+  border-radius: 8px; /* Sudut membulat pada gambar */
+  transition: transform 0.3s ease; /* Efek zoom saat gambar dihover */
+}
+
+/* CSS untuk galeri di perangkat mobile */
+@media (max-width: 768px) {
+  .elementor-image-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+    grid-template-rows: repeat(5, auto); /* 5 baris pada layar kecil */
+  }
+}
+
+/* Efek hover pada gambar */
+.elementor-image-gallery img:hover {
+  transform: scale(1.05); /* Efek zoom saat gambar dihover */
+}
+
+
